@@ -5,6 +5,9 @@
 A simple declarative Jenkinsfile
 - Clones git repo 
 - Binds AWS IAM user creds in terraform stages with AWS Creds plugin
+- Snyk Scan stage that checks IaC code before init
+- Snyk Scan uses the report flag to output Results into the Snyk UI
+- Snyk Scan will fail build if high severity issues or higher are found
 - Stages for terraform init and apply 
 - Destroy stage using user input 
 
