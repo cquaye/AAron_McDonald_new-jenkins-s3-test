@@ -37,7 +37,7 @@ pipeline {
             }
         }
 
-        stage('Terraform Apply') {
+        stage('Terraform Plan') {
             steps {
                 withCredentials([[
                     $class: 'AmazonWebServicesCredentialsBinding',
@@ -45,7 +45,6 @@ pipeline {
                 ]]) {
                     sh '''
                         terraform plan -out=tfplan
-                        terraform apply -auto-approve tfplan
                     '''
                 }
             }
